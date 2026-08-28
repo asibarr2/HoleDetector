@@ -1,0 +1,26 @@
+# Datasets and media - too large for git
+dataset/
+runs/
+masks/
+frames/
+frames_dedup/
+weights/
+excavator_videos/
+configs/
+*.mp4
+*.jpg
+*.jpeg
+*.png
+*.xml
+
+# Model weights (large files)
+*.pt
+
+# Python
+__pycache__/
+*.pyc
+.DS_Store
+
+# Streamlit
+.streamlit/
+holeDetector/
