@@ -67,6 +67,6 @@ python scripts/detect.py --weights runs/hole_detector/weights/best.pt --source v
 
 ## Notes
 
-- `videos/`, `frames/`, `frames_dedup/`, `masks/`, `dataset/`, `runs/`, and model weights (`*.pt`) are gitignored — they're either regenerable from the scripts or too large for git. Share trained weights via a GitHub Release rather than committing them.
+- `videos/`, `frames/`, `frames_dedup/`, `masks/`, `dataset/`, `runs/`, and model weights (`*.pt`) are gitignored — they're either regenerable from the scripts or too large for git. Will share trained weights via a GitHub Release rather than committing them.
 - Current label schema is single-class (`hole`). Extend `CLASS_NAMES` in `prepare_yolo_dataset.py` to add more classes (e.g. spoil piles, trench edges).
 - Built as an experimental pipeline for ground-level/onboard dig-hole detection — not aerial/satellite construction monitoring.
