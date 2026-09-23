@@ -65,6 +65,27 @@ python scripts/train_yolo.py --model yolov8n-seg.pt --epochs 100
 python scripts/detect.py --weights runs/hole_detector/weights/best.pt --source videos/your_clip.mp4 --show
 ```
 
+## Results
+
+Latest run (`hole_detector-3`, 142 labeled images, YOLOv8n-seg, 100 epochs):
+
+| Metric | Value |
+|---|---|
+| Mask precision | 0.77 |
+| Mask recall | 0.32 |
+| mAP50 (mask) | 0.34 |
+| mAP50-95 (mask) | 0.22 |
+
+<p>
+  <img src="docs/results/results.png" width="100%" alt="Training curves: loss, precision, recall, mAP over 100 epochs">
+</p>
+<p>
+  <img src="docs/results/MaskPR_curve.png" width="45%" alt="Mask precision-recall curve">
+  <img src="docs/results/confusion_matrix_normalized.png" width="45%" alt="Normalized confusion matrix">
+</p>
+
+Precision is solid but recall is still low — the model is confident when it fires but misses most holes. See [`docs/RESULTS.md`](docs/RESULTS.md) for the full run history and what's planned to improve it (more labeled frames, the untouched `Storm_Drainage.mp4` video, and confidence-threshold tuning).
+
 ## Notes
 
 - `videos/`, `frames/`, `frames_dedup/`, `masks/`, `dataset/`, `runs/`, and model weights (`*.pt`) are gitignored — they're either regenerable from the scripts or too large for git. Share trained weights via a GitHub Release rather than committing them.
