@@ -16,6 +16,9 @@ configs/
 # Model weights (large files)
 *.pt
 
+# Keep tracked result plots
+!docs/results/*.png
+
 # Python
 __pycache__/
 *.pyc
